@@ -29,7 +29,9 @@ class DeepWalk:
         self.w2v_model = None
         self._embeddings = {}
 
-        # 随机游走, 1/p 是不进行游走的概率，1/q是访问距离为2的节点的概率，邻接访问概率为1
+        # 随机游走, 1/p 是返回原节点的概率，1/q 是远离原节点的概率，邻接访问概率为 1
+        # 可以理解为 邻接访问为BFS，远离原节点的访问为DFS，通过 q 来控制游走更偏向于BFS还是DFS
+        #   当 q < 1 时，更倾向于DFS；当 q > 1 时更倾向于BFS；当 q = 1 时Node2vec退化为DeepWalk
         self.walker = RandomWalker(graph, p=100, q=1, )
         self.walker.preprocess_transition_probs()
 

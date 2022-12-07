@@ -1,6 +1,7 @@
 import numpy as np
 
-
+# Link: https://mp.weixin.qq.com/s/n_EveU9G_MRwuSHW5kyWkw
+# 静态、有偏的随机游走下，AliasTable方法实现
 def create_alias_table(area_ratio):
     """
 
