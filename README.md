@@ -34,3 +34,6 @@ pip install python-Levenshtein
    - `graph_emb\walker.py` 中的 `preprocess_transition_probs()` 方法为我们做了这部分的工作
 3. 根据epoch和walk length 以及 Alias Table 进行 Alias Sample 获取游走序列
 4. 通过 Word2vec 方法对数据训练并获得向量 Embedding
+
+
+
